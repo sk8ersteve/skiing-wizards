@@ -10,10 +10,14 @@ public class enemyScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (transform.localPosition.x > 10 || transform.localPosition.x < -10)
-			transform.localPosition = new Vector2(-transform.localPosition.x,transform.localPosition.y);
-		if (transform.localPosition.y > 5 || transform.localPosition.y < -5)
-			transform.localPosition = new Vector2(transform.localPosition.x, -transform.localPosition.y);
+		if (transform.position.x > 10)
+			transform.position = new Vector2((-transform.position.x+0.2f),transform.position.y);
+		if (transform.position.x < -10)
+			transform.position = new Vector2((-transform.position.x-0.2f),transform.position.y);
+		if (transform.position.y > 5)
+			transform.position = new Vector2(transform.position.x, (-transform.position.y+0.2f));
+		if (transform.position.y < -5)
+			transform.position = new Vector2(transform.position.x, (-transform.position.y-0.2f));
 
 	}
 }
