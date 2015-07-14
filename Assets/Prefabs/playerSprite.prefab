@@ -39,7 +39,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169574}
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: .200000003
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_IsKinematic: 0
@@ -73,8 +73,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTrans: {fileID: 0}
   myBody: {fileID: 0}
-  force: 3
-  rotationSpeed: 150
+  force: 4
+  rotationSpeed: 300
   velocity: 0
   maxVelocity: 6
 --- !u!212 &21228982
@@ -116,11 +116,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: force
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: rotationSpeed
-      value: 150
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxVelocity
@@ -137,6 +137,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
       value: .75
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LinearDrag
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
