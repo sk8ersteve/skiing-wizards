@@ -76,7 +76,7 @@ MonoBehaviour:
   force: 3
   rotationSpeed: 150
   velocity: 0
-  maxVelocity: 5
+  maxVelocity: 6
 --- !u!212 &21228982
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -124,7 +124,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxVelocity
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
