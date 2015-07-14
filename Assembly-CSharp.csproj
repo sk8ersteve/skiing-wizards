@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\enemyManager.cs" />
      <Compile Include="Assets\Scripts\enemyScript.cs" />
+     <Compile Include="Assets\Scripts\gameManagerScript.cs" />
      <Compile Include="Assets\Scripts\playerScript.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>

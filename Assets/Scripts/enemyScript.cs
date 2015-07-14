@@ -3,17 +3,33 @@ using System.Collections;
 
 public class enemyScript : MonoBehaviour {
 
+	private gameManagerScript gmc;
+
 	// Use this for initialization
 	void Start () {
-	
+		gmc = GameObject.FindGameObjectWithTag ("GameController").GetComponent<gameManagerScript>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (transform.localPosition.x > 10 || transform.localPosition.x < -10)
-			transform.localPosition = new Vector2(-transform.localPosition.x,transform.localPosition.y);
-		if (transform.localPosition.y > 5 || transform.localPosition.y < -5)
-			transform.localPosition = new Vector2(transform.localPosition.x, -transform.localPosition.y);
+		if (transform.position.x > 10)
+			transform.position = new Vector2((-transform.position.x+0.2f),transform.position.y);
+		if (transform.position.x < -10)
+			transform.position = new Vector2((-transform.position.x-0.2f),transform.position.y);
+		if (transform.position.y > 5)
+			transform.position = new Vector2(transform.position.x, (-transform.position.y+0.2f));
+		if (transform.position.y < -5)
+			transform.position = new Vector2(transform.position.x, (-transform.position.y-0.2f));
 
+	}
+
+	void OnTriggerEnter2D (Collider2D hit) {
+		if (hit.gameObject.tag == "Player") {
+			//run player dies script
+			Destroy (hit.gameObject);
+			gmc.playerDestroyed();
+		} else if (hit.tag == "Attack") {
+			Destroy(this.gameObject);
+		}
 	}
 }
