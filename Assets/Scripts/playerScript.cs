@@ -14,10 +14,6 @@ public class playerScript : MonoBehaviour {
 	public Transform spriteTransform;
 	public GameObject spriteManager;
 
-	public Transform magicPrefab;
-	public Vector2 magicPosition;
-	public int magicSpeed;
-
 	private SpriteRenderer wizardSprite;
 	private spriteManagerScript spriteScript;
 
@@ -48,16 +44,6 @@ public class playerScript : MonoBehaviour {
 			myTrans.Rotate (-Vector3.forward * rotationSpeed * 	Time.deltaTime);
 			spriteTransform.Rotate (Vector3.forward * rotationSpeed *Time.deltaTime);
 		}
-		//shoot
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			Transform magic = (Transform)Instantiate(magicPrefab);
-			Rigidbody2D magicRgbd = magic.gameObject.GetComponent<Rigidbody2D> ();
-			magic.position = myTrans.position + myTrans.right * 0.75f;
-			magicRgbd.velocity=myTrans.right * magicSpeed;
-
-		}
-
-		//re routes user to other side of screen when go out of bounds
 		if (transform.position.x > 10)
 			transform.position = new Vector2((-transform.position.x+0.2f),transform.position.y);
 		if (transform.position.x < -10)
@@ -76,6 +62,7 @@ public class playerScript : MonoBehaviour {
 			wizardSprite.sprite = spriteScript.wizardLeft;
 		if (transform.rotation.eulerAngles.z < 315 && transform.rotation.eulerAngles.z > 225)
 			wizardSprite.sprite = spriteScript.wizardDown;
+		Debug.Log (transform.rotation.eulerAngles.z);
 
 	}
 }
