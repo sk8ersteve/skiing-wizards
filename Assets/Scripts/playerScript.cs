@@ -9,10 +9,13 @@ public class playerScript : MonoBehaviour {
 	
 	public float force;
 	public float rotationSpeed;
-	public  float velocity;
+	public float velocity;
 	public float maxVelocity;
 	public Transform spriteTransform;
 	public GameObject spriteManager;
+
+	public Transform magicPrefab;
+	public int magicSpeed;
 
 	private SpriteRenderer wizardSprite;
 	private spriteManagerScript spriteScript;
@@ -44,6 +47,16 @@ public class playerScript : MonoBehaviour {
 			myTrans.Rotate (-Vector3.forward * rotationSpeed * 	Time.deltaTime);
 			spriteTransform.Rotate (Vector3.forward * rotationSpeed *Time.deltaTime);
 		}
+
+		//Shoot
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			Transform magic = (Transform)Instantiate(magicPrefab);
+			Rigidbody2D magicRgbd = magic.gameObject.GetComponent<Rigidbody2D> ();
+			magic.position = myTrans.position + myTrans.right * 0.75f;
+			magicRgbd.velocity = myTrans.right * magicSpeed;
+
+		}
+
 		if (transform.position.x > 10)
 			transform.position = new Vector2((-transform.position.x+0.2f),transform.position.y);
 		if (transform.position.x < -10)
