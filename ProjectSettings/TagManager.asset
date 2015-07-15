@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Attack
+  - Sprite Controller
   layers:
   - Default
   - TransparentFX
