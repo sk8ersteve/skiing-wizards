@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\enemyScript.cs" />
      <Compile Include="Assets\Scripts\gameManagerScript.cs" />
      <Compile Include="Assets\Scripts\playerScript.cs" />
+     <Compile Include="Assets\Scripts\spriteManagerScript.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
