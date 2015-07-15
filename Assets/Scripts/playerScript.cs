@@ -34,6 +34,9 @@ public class playerScript : MonoBehaviour {
 
 		velocity = Mathf.Sqrt (Mathf.Pow(myBody.velocity.x, 2) + Mathf.Pow(myBody.velocity.y, 2));
 		if (Input.GetKey (KeyCode.UpArrow)) {
+			if(GetComponent<AudioSource>().isPlaying != true){
+			GetComponent<AudioSource>().Play(); 
+			}
 			if (velocity < maxVelocity)
 				myBody.AddForce(myTrans.right * force);
 			if (velocity >= maxVelocity)
